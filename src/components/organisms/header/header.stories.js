@@ -6,13 +6,14 @@ import Header from './header';
 import AccessibleMenu from '../../molecules/accessibleMenu/menu'
 
 storiesOf("Header", module)
-  .add("simple", () => (
+  .add("Header simple", () => (
     <Header>
       <img src="" alt="" />
     </Header>
   ))
-  .add("accessible", () => (
+  .add("Header accessible", () => (
     <Header>
+      <img src="" alt="" />
       <AccessibleMenu />
     </Header>
   ));
