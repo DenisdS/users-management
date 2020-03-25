@@ -1,14 +1,25 @@
-import renderer from 'react-test-renderer';
 import React from 'react';
+import { shallow } from '../../../enzyme'
 
 import Header from './header'
+import Logo from '../../atoms/logo'
 
-it('Verify if header renders correctly', () => {
-  const tree = renderer
-    .create(
-      <Header>
-        <img src="" alt=""/>
-      </Header>)
-    .toJSON();
-  expect(tree).toMatchSnapshot();
+let wrapper
+
+beforeEach(() => {
+  wrapper = shallow( <Header /> );
 });
+
+describe('<Header /> rendering', () => {
+
+  it('renders correctly', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it("Header renders a child component", () => {
+    const logo = shallow(<Header />);
+
+    expect(wrapper.containsMatchingElement(<Logo />)).toEqual(true)
+  });
+
+})

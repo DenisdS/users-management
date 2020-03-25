@@ -1,9 +1,11 @@
 import React from 'react'
 
+import Logo from '../../atoms/logo'
+
 const Header = () => {
   return(
     <header>
-      <img src="" alt="" />
+      <Logo />
     </header>
   )
 }
