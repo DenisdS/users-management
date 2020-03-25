@@ -11,9 +11,10 @@ describe('<Logo /> rendering', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("Logo renders an image", () => {
+  it("Logo renders an image and your alt attribute", () => {
     const wrapper = shallow( <Logo /> )
     expect(wrapper.find("img").prop("src")).toEqual(imgLogo);
+    expect(wrapper.find("img").prop("alt")).toEqual("Diary Social");
   });
 
 })
