@@ -1,11 +1,16 @@
 import React from 'react';
 
-import Header from '../components/organisms/header'
+import Routes from '../routes/routes'
+
+import Header from '../components/organisms/header/header'
+import Menu from '../components/molecules/menu/menu'
 
 const App = () => {
   return(
     <>
       <Header />
+      <Menu />
+      <Routes />
     </>
   )
 }
