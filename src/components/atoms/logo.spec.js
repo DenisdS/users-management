@@ -4,22 +4,16 @@ import { shallow } from '../../enzyme'
 import imgLogo from '../../assets/logo.png'
 import Logo from './logo'
 
-let wrapper
-
-beforeEach(() => {
-  wrapper = shallow( <Logo /> );
-});
-
 describe('<Logo /> rendering', () => {
 
   it('renders correctly', () => {
+    const wrapper = shallow( <Logo /> )
     expect(wrapper).toMatchSnapshot();
   });
 
   it("Logo renders an image", () => {
-    const logo = shallow(<Logo />);
-
-    expect(logo.find("img").prop("src")).toEqual(imgLogo);
+    const wrapper = shallow( <Logo /> )
+    expect(wrapper.find("img").prop("src")).toEqual(imgLogo);
   });
 
 })
