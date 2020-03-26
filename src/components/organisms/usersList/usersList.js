@@ -9,7 +9,6 @@ const UsersList = () => {
       const response = await fetch('https://jsonplaceholder.typicode.com/users');
       const data = await response.json();
       setUsers(data);
-      console.log(data[0].name);
     };
     fetchData();
   }, []);
@@ -22,6 +21,7 @@ const UsersList = () => {
         <li key={user.id}>
            <h3>{user.name}</h3>
            <p>{user.email}</p>
+           <h4>{user.company.name}</h4>
         </li>
       ))}
     </ul>
