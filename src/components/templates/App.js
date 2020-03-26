@@ -4,6 +4,7 @@ import Routes from '../../routes/routes'
 import style from './app.style'
 
 import Header from '../organisms/header/header'
+import UsersList from '../organisms/usersList/usersList'
 import Menu from '../molecules/menu/menu'
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
   return(
     <>
       <Header />
+      <UsersList />
       <Menu />
       <main className={classes.main} >
         <Routes />
