@@ -1,11 +1,11 @@
 import React from 'react';
-import { shallow } from '../enzyme'
+import { shallow } from '../../enzyme'
 
-import Routes from '../routes/routes'
+import Routes from '../../routes/routes'
 
 import App from './App'
-import Header from '../components/organisms/header/header'
-import Menu from '../components/molecules/menu/menu'
+import Header from '../organisms/header/header'
+import Menu from '../molecules/menu/menu'
 
 describe('<App /> rendering', () => {
 
