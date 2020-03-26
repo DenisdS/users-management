@@ -4,7 +4,10 @@ import { createUseStyles } from 'react-jss'
 
 const headerStyle = createUseStyles({
   header: {
-    background: '#7AB0FF'
+    display: 'grid',
+    background: '#7AB0FF',
+    justifyContent: 'center',
+    padding: '10px 0'
   }
 })
 
