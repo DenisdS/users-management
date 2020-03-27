@@ -8,6 +8,7 @@ const UsersList = () => {
 
   const [listUsers, setUsers] = useState([]);
   const [idUser, setIdUser] = useState(1);
+  const [postsUser, setPosts] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,11 +19,19 @@ const UsersList = () => {
     fetchData();
   }, []);
 
-  console.log(idUser);
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${idUser}`);
+      const data = await response.json();
+      setPosts(data);
+    };
+    fetchData();
+  }, [idUser]);
 
   const classes = style()
 
   return(
+    <>
     <aside className={classes.aside} >
       <ul>
         { listUsers.map(user => (
@@ -36,6 +45,16 @@ const UsersList = () => {
         ))}
       </ul>
     </aside>
+
+    <ul>
+      { postsUser.map(post => (
+        <li key={post.id}>
+          <h3>{post.title}</h3>
+          <p>{post.body}</p>
+        </li>
+      ))}
+    </ul>
+    </>
   )
 }
 
