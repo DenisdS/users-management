@@ -4,8 +4,11 @@ import Routes from '../../routes/routes'
 import style from './app.style'
 
 import Header from '../organisms/header/header'
-import UsersList from '../organisms/usersList/usersList'
 import Menu from '../molecules/menu/menu'
+
+import { ListProvider } from "../organisms/usersList/usersList";
+import Posts from '../pages/posts'
+import Photos from '../pages/photos'
 
 const App = () => {
   const classes = style()
@@ -13,10 +16,15 @@ const App = () => {
   return(
     <>
       <Header />
-      <UsersList />
       <Menu />
       <main className={classes.main} >
-        <Routes />
+
+
+          <ListProvider>
+            <Posts />
+            <Photos />
+          </ListProvider>
+
       </main>
     </>
   )
