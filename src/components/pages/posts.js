@@ -1,12 +1,11 @@
 import React, { useContext, useState, useEffect } from 'react'
 
-import { ListContext } from '../organisms/usersList/usersList'
+import { ListUserContext } from '../organisms/usersList/usersList'
 
 const Posts = () => {
 
-  const [idUser, setIdUser] = useContext(ListContext);
+  const [idUser, setIdUser] = useContext(ListUserContext);
   const [postsUser, setPosts] = useState([]);
-
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,7 +15,6 @@ const Posts = () => {
     };
     fetchData();
   }, [idUser]);
-
 
   return(
     <>

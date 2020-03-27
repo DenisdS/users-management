@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, createContext } from 'react'
 
 import { Link } from 'react-router-dom'
 
 import style from './userList.style'
 
+const ListUserContext = createContext([{}, () => {}]);
 
-const ListContext = React.createContext([{}, () => {}]);
-
-const ListProvider = (props) => {
+const ListUserProvider = (props) => {
 
   const [listUsers, setUsers] = useState([]);
   const [idUser, setIdUser] = useState(1);
@@ -25,27 +24,25 @@ const ListProvider = (props) => {
 
   return(
     <>
-    <aside className={classes.aside} >
-      <ul>
-        { listUsers.map(user => (
-          <li key={user.id}>
-            <Link to="" onClick={() => setIdUser(user.id)}>
-              <h3>{user.name}</h3>
-              <p>{user.email}</p>
-              <h4>{user.company.name}</h4>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </aside>
+      <aside className={classes.aside} >
+        <ul>
+          { listUsers.map(user => (
+            <li key={user.id}>
+              <Link to="" onClick={() => setIdUser(user.id)}>
+                <h3>{user.name}</h3>
+                <p>{user.email}</p>
+                <h4>{user.company.name}</h4>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </aside>
 
-
-
-    <ListContext.Provider value={[idUser, setIdUser]}>
-      {props.children}
-    </ListContext.Provider>
+      <ListUserContext.Provider value={[idUser, setIdUser]}>
+        {props.children}
+      </ListUserContext.Provider>
     </>
   )
 }
 
-export { ListContext, ListProvider };
+export { ListUserContext, ListUserProvider };
