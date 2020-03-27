@@ -9,6 +9,7 @@ const UsersList = () => {
   const [listUsers, setUsers] = useState([]);
   const [idUser, setIdUser] = useState(1);
   const [postsUser, setPosts] = useState([]);
+  const [photosUser, setPhotos] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,6 +25,15 @@ const UsersList = () => {
       const response = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${idUser}`);
       const data = await response.json();
       setPosts(data);
+    };
+    fetchData();
+  }, [idUser]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${idUser}`);
+      const data = await response.json();
+      setPhotos(data);
     };
     fetchData();
   }, [idUser]);
@@ -51,6 +61,15 @@ const UsersList = () => {
         <li key={post.id}>
           <h3>{post.title}</h3>
           <p>{post.body}</p>
+        </li>
+      ))}
+    </ul>
+
+    <ul>
+      { photosUser.map(photo => (
+        <li key={photo.id}>
+          <h3>{photo.title}</h3>
+          <img src={photo.url} alt={photo.title} />
         </li>
       ))}
     </ul>
