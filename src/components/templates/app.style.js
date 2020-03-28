@@ -41,9 +41,9 @@ const templateStyle = createUseStyles({
       'aside main'
     `,
     gridTemplateColumns: `
-      200px 1fr
+      '200px 1fr'
     `,
-    gridTemplateRows: `
+    gridTemplateRows: `    gridTemplateColumns: '200px 1fr'
       125px 1fr
     `
   }
