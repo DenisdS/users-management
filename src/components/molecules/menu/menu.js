@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 import style from './menu.style'
 
 const links = [
-  { route: "/fotos", label: "Fotos"},
-  { route: "/posts", label: "Posts"}
+  { route: "/fotos", label: "FOTOS"},
+  { route: "/posts", label: "POSTS"}
 ];
 
 const Menu = () => {

@@ -5,6 +5,9 @@ const templateStyle = createUseStyles({
     body: {
       fontFamily: 'Verdana, Arial, Helvetica, sans-serif'
     },
+    ul: {
+      padding: '0'
+    },
     li: {
       listStyle: 'none',
     },
@@ -27,11 +30,15 @@ const templateStyle = createUseStyles({
     gridArea: 'nav'
   },
   aside: {
+    padding: '0',
     gridArea: 'aside'
   },
   main: {
     gridArea: 'main',
     display: 'grid'
+  },
+  ul: {
+    padding: '0'
   },
   container: {
     display: 'grid',
@@ -44,8 +51,9 @@ const templateStyle = createUseStyles({
       200px 1fr
     `,
     gridTemplateRows: `
-      125px 1fr
-    `
+      125px 50px 1fr
+    `,
+    gap: '15px 35px'
   }
 })
 
