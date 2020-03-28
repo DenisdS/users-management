@@ -16,11 +16,15 @@ const templateStyle = createUseStyles({
       color: '#000'
     },
     h2: {
-      fontSize: '18px',
+      fontSize: '14px',
       margin: '0'
     },
     h3 : {
+      fontSize: '14px',
       margin: '0'
+    },
+    h4: {
+      fontSize: '14px'
     },
     p: {
       fontSize: '14px',
