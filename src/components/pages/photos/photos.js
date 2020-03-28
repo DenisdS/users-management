@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 import { ListUserContext } from '../../organisms/usersList/usersList'
 
@@ -7,7 +8,7 @@ const Photos = () => {
   const [idUser] = useContext(ListUserContext);
   const [photosUser, setPhotos] = useState([]);
 
-  const [idPhoto, setIdPhoto] = useState(40);
+  const [idPhoto, setIdPhoto] = useState(1);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,8 +23,6 @@ const Photos = () => {
     return photos.id === idPhoto
   })
 
-  console.log(filterPhotos);
-
   return(
     <section>
       <ul>
@@ -36,7 +35,9 @@ const Photos = () => {
 
       { photosUser.map(photo => (
         <li key={photo.id}>
-          <img src={photo.thumbnailUrl} alt={photo.title} />
+          <Link to="" onClick={() => setIdPhoto(photo.id)}>
+            <img src={photo.thumbnailUrl} alt={photo.title} />
+          </Link>
         </li>
       ))}
     </ul>
