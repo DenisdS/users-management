@@ -4,7 +4,7 @@ import { ListUserContext } from '../organisms/usersList/usersList'
 
 const Photos = () => {
 
-  const [idUser, setIdUser] = useContext(ListUserContext);
+  const [idUser] = useContext(ListUserContext);
   const [photosUser, setPhotos] = useState([]);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const Photos = () => {
   }, [idUser]);
 
   return(
-    <>
+    <section>
       <ul>
       { photosUser.map(photo => (
         <li key={photo.id}>
@@ -26,7 +26,7 @@ const Photos = () => {
         </li>
       ))}
     </ul>
-    </>
+    </section>
   )
 }
 export default Photos;

@@ -2,9 +2,11 @@ import React, { useContext, useState, useEffect } from 'react'
 
 import { ListUserContext } from '../organisms/usersList/usersList'
 
+import style from './posts.style'
+
 const Posts = () => {
 
-  const [idUser, setIdUser] = useContext(ListUserContext);
+  const [idUser] = useContext(ListUserContext);
   const [postsUser, setPosts] = useState([]);
 
   useEffect(() => {
@@ -16,17 +18,21 @@ const Posts = () => {
     fetchData();
   }, [idUser]);
 
+  const classes = style()
+
   return(
-    <>
-      <ul>
+    <section>
+      <ul className={classes.ul}>
       { postsUser.map(post => (
         <li key={post.id}>
-          <h3>{post.title}</h3>
-          <p>{post.body}</p>
+          <article>
+            <h2>{post.title}</h2>
+            <p>{post.body}</p>
+          </article>
         </li>
       ))}
     </ul>
-    </>
+    </section>
   )
 }
 

@@ -2,14 +2,18 @@ import React from 'react'
 
 import { Link } from 'react-router-dom'
 
+import style from './menu.style'
+
 const links = [
   { route: "/fotos", label: "Fotos"},
   { route: "/posts", label: "Posts"}
 ];
 
 const Menu = () => {
+  const classes = style()
+
   return(
-    <nav>
+    <nav className={classes.nav}>
       <ul>
         { links.map(link => (
           <li key={link.route}>

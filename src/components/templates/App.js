@@ -5,24 +5,21 @@ import style from './app.style'
 
 import Header from '../organisms/header/header'
 import Menu from '../molecules/menu/menu'
-
 import { ListUserProvider } from "../organisms/usersList/usersList";
-import Posts from '../pages/posts'
-import Photos from '../pages/photos'
 
 const App = () => {
   const classes = style()
 
   return(
-    <>
-      <Header />
-      <Menu />
-      <main className={classes.main} >
-        <ListUserProvider>
+    <div className={classes.container} >
+      <Header className={classes.header} />
+      <ListUserProvider className={classes.aside}>
+        <Menu className={classes.nav} />
+        <main className={classes.main} >
           <Routes />
-        </ListUserProvider>
-      </main>
-    </>
+        </main>
+      </ListUserProvider>
+    </div>
   )
 }
 
