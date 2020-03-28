@@ -1,8 +1,8 @@
 import React from 'react'
 import {Route, Switch} from 'react-router-dom'
 
-import Photos from '../components/pages/photos'
-import Posts from '../components/pages/posts'
+import Photos from '../components/pages/photos/photos'
+import Posts from '../components/pages/posts/posts'
 
 const routes = () =>{
 

@@ -1,11 +1,13 @@
 import React, { useContext, useState, useEffect } from 'react'
 
-import { ListUserContext } from '../organisms/usersList/usersList'
+import { ListUserContext } from '../../organisms/usersList/usersList'
 
 const Photos = () => {
 
   const [idUser] = useContext(ListUserContext);
   const [photosUser, setPhotos] = useState([]);
+
+  const [idPhoto, setIdPhoto] = useState(40);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,13 +18,25 @@ const Photos = () => {
     fetchData();
   }, [idUser]);
 
+  const mainPhoto = photosUser.filter((photos) => {
+    return photos.id === idPhoto
+  })
+
+  console.log(filterPhotos);
+
   return(
     <section>
       <ul>
-      { photosUser.map(photo => (
+      { mainPhoto.map(photo => (
         <li key={photo.id}>
           <h3>{photo.title}</h3>
           <img src={photo.url} alt={photo.title} />
+        </li>
+      ))}
+
+      { photosUser.map(photo => (
+        <li key={photo.id}>
+          <img src={photo.thumbnailUrl} alt={photo.title} />
         </li>
       ))}
     </ul>

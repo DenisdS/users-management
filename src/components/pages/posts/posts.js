@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 
-import { ListUserContext } from '../organisms/usersList/usersList'
+import { ListUserContext } from '../../organisms/usersList/usersList'
 
 import style from './posts.style'
 
