@@ -5,9 +5,22 @@ const listStyle = createUseStyles({
     gridArea: 'aside',
     display: 'grid',
     background: '#E6F2F5',
-    justifyContent: 'end',
+    borderLeft: '15px #fff solid',
+    justifyContent: 'center',
     '& li': {
-      background: '#8DBEEB'
+      width: '165px',
+      background: '#8DBEEB',
+      padding: '15px 0',
+      marginTop: '15px',
+      '& a':{
+        fontSize: '12px',
+        '& h4': {
+          margin: '0'
+        }
+      }
+    },
+    '& li:first-child': {
+      marginTop: '0'
     }
   }
 })
