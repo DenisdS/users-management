@@ -17,17 +17,19 @@ const InfoUser = () => {
   }, [idUser]);
 
   return(
-    <section>
-       { infoUser.map(info => (
-        <div key={info.id}>
-          <h2>{info.name}</h2>
+    <>
+      { infoUser.map(info => (
+        <section key={info.id}>
+          <div >
+            <h2>{info.name}</h2>
 
-          <h3>Endereço</h3>
-          <p>{info.address.street} - {info.address.suite}</p>
-          <p>{info.address.city} {info.address.zipcode}</p>
-        </div>
+            <h3>Endereço</h3>
+            <p>{info.address.street} - {info.address.suite}</p>
+            <p>{info.address.city} {info.address.zipcode}</p>
+          </div>
+        </section>
       ))}
-    </section>
+    </>
   )
 }
 export default InfoUser;
