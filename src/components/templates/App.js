@@ -5,7 +5,8 @@ import style from './app.style'
 
 import Header from '../organisms/header/header'
 import Menu from '../molecules/menu/menu'
-import { ListUserProvider } from "../organisms/usersList/usersList";
+import { ListUserProvider } from '../organisms/usersList/usersList'
+import InfoUser from '../molecules/infoUser/infoUser'
 
 const App = () => {
   const classes = style()
@@ -16,6 +17,7 @@ const App = () => {
       <ListUserProvider className={classes.aside}>
         <Menu className={classes.nav} />
         <main className={classes.main} >
+          <InfoUser />
           <Routes />
         </main>
       </ListUserProvider>
