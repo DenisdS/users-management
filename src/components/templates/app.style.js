@@ -17,18 +17,20 @@ const templateStyle = createUseStyles({
     },
     h2: {
       fontSize: '14px',
-      margin: '0'
+      margin: '0',
+      lineHeight: '20px'
     },
     h3 : {
       fontSize: '14px',
-      margin: '0'
+      margin: '0',
+      lineHeight: '20px'
     },
     h4: {
       fontSize: '14px'
     },
     p: {
       fontSize: '14px',
-      lineHeight: '30px',
+      lineHeight: '20px',
       margin: '0'
     }
   },

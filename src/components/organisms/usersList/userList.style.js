@@ -16,6 +16,9 @@ const listStyle = createUseStyles({
         fontSize: '12px',
         '& h4': {
           margin: '0'
+        },
+        '& p': {
+          lineHeight: '25px'
         }
       }
     },

@@ -23,7 +23,7 @@ const InfoUser = () => {
           <div >
             <h2>{info.name}</h2>
 
-            <h3>Endereço</h3>
+            <h3>Endereço:</h3>
             <p>{info.address.street} - {info.address.suite}</p>
             <p>{info.address.city} {info.address.zipcode}</p>
           </div>
