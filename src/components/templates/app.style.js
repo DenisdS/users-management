@@ -45,8 +45,7 @@ const templateStyle = createUseStyles({
     gridArea: 'aside'
   },
   main: {
-    gridArea: 'main',
-    display: 'grid'
+    gridArea: 'main'
   },
   ul: {
     padding: '0'

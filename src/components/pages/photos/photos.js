@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 
 import { ListUserContext } from '../../organisms/usersList/usersList'
 
+import style from './photos.style'
+
 const Photos = () => {
 
   const [idUser] = useContext(ListUserContext);
@@ -23,6 +25,8 @@ const Photos = () => {
     return photos.id === idPhoto
   })
 
+  const classes = style()
+
   return(
     <section>
       <ul>
@@ -33,13 +37,17 @@ const Photos = () => {
         </li>
       ))}
 
-      { photosUser.map(photo => (
-        <li key={photo.id}>
-          <Link to="" onClick={() => setIdPhoto(photo.id)}>
-            <img src={photo.thumbnailUrl} alt={photo.title} />
-          </Link>
-        </li>
-      ))}
+      <li>
+        <ul className={classes.listThumbnailUrl}>
+          { photosUser.map(photo => (
+            <li key={photo.id} >
+              <Link to="" onClick={() => setIdPhoto(photo.id)}>
+                <img src={photo.thumbnailUrl} alt={photo.title} />
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </li>
     </ul>
     </section>
   )
