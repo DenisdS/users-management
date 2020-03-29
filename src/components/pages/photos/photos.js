@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+
+import SlideShow from 'react-image-show';
 
 import { ListUserContext } from '../../organisms/usersList/usersList'
 
@@ -10,8 +11,6 @@ const Photos = () => {
   const [idUser] = useContext(ListUserContext);
   const [photosUser, setPhotos] = useState([]);
 
-  const [idPhoto, setIdPhoto] = useState(1);
-
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${idUser}`);
@@ -21,34 +20,32 @@ const Photos = () => {
     fetchData();
   }, [idUser]);
 
-  const mainPhoto = photosUser.filter((photos) => {
-    return photos.id === idPhoto
-  })
+  const imgSlide = [];
+
+  const getImgs = (img) => {
+    var auxImg = img["url"];
+    imgSlide.push(`${auxImg}`);
+    return imgSlide;
+  }
+
+  photosUser.forEach(getImgs);
 
   const classes = style()
 
+  console.log(imgSlide);
+
   return(
     <section>
-      <ul>
-      { mainPhoto.map(photo => (
-        <li key={photo.id}>
-          <h3>{photo.title}</h3>
-          <img src={photo.url} alt={photo.title} />
-        </li>
-      ))}
-
-      <li>
-        <ul className={classes.listThumbnailUrl}>
-          { photosUser.map(photo => (
-            <li key={photo.id} >
-              <Link to="" onClick={() => setIdPhoto(photo.id)}>
-                <img src={photo.thumbnailUrl} alt={photo.title} />
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </li>
-    </ul>
+        <SlideShow
+          images={imgSlide}
+          width="920px"
+          imagesWidth="800px"
+          imagesHeight="450px"
+          imagesHeightMobile="56vw"
+          thumbnailsWidth="920px"
+          thumbnailsHeight="12vw"
+          arrows thumbnails fixedImagesHeight
+        />
     </section>
   )
 }
