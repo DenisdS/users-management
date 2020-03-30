@@ -5,6 +5,8 @@ import { ListUserContext } from '../../organisms/usersList/usersList'
 import ImageGallery from 'react-image-gallery'
 import "react-image-gallery/styles/css/image-gallery.css";
 
+import style from './photos.style'
+
 const Photos = () => {
   const [idUser] = useContext(ListUserContext);
   const [photosUser, setPhotos] = useState([]);
@@ -27,8 +29,12 @@ const Photos = () => {
 
   photosUser.forEach(getImgs);
 
+  const classes = style ();
+
   return(
-    <ImageGallery items={imgSlide} />
+    <section className={classes.sectionPhotos}>
+      <ImageGallery items={imgSlide} />
+    </section>
   )
 }
 export default Photos;

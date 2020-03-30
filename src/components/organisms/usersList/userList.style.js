@@ -10,7 +10,7 @@ const listStyle = createUseStyles({
     '& li': {
       width: '165px',
       background: '#8DBEEB',
-      padding: '15px 0',
+      padding: '0 10px 0 10px',
       marginTop: '15px',
       '& a':{
         fontSize: '12px',
@@ -19,7 +19,9 @@ const listStyle = createUseStyles({
           margin: '0'
         },
         '& p': {
-          lineHeight: '25px'
+          lineHeight: '25px',
+          textOverflow: 'ellipsis',
+          overflow: 'hidden',
         }
       }
     },
