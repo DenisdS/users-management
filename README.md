@@ -1,20 +1,24 @@
 ## Users Management
-
-Application for list of selectable users contents relations. (Using Eslint; React Redux;)
+Application for list of selectable users contents relations. (Using React Hooks)
 
 ### Technologies
-
-JavaScript (React/Redux);
-React (Hooks);
+React;
+React Router;
+React Hooks;
+Context API;
 Eslint;
-CSS
-Testes (Jest);
+React-JSS;
+Jest;
+Enzyme;
+Storybook
 
 ### Execute Project
 Is necessary install the dependencies, for this execute npm install.
-After execute `npm start`.
-Observation: the client runing in `http://localhost:3000`
+After execute `npm run start`.`
 
 ### Execute Test
-The command `npm test` is the responsible for execute
+The command `npm run test` is the responsible for execute
 tests of Screenshot using Jest.
+
+### Future Features
+Add methodology for CSS; Create more unit tests; Create a complete Storybook; Optmize interface for mobile.
