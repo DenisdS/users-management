@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss'
 
-const photosStyle = createUseStyles({
+ const photosStyle = createUseStyles({
   listThumbnailUrl: {
     '& li': {
       display: 'inline'
@@ -11,4 +11,4 @@ const photosStyle = createUseStyles({
   }
 })
 
-export default photosStyle;
+ export default photosStyle;

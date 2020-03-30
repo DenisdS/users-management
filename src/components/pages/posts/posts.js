@@ -11,7 +11,7 @@ const Posts = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${idUser}`);
+      const response = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${idUser}`)
       const data = await response.json();
       setPosts(data);
     };

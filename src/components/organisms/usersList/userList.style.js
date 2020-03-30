@@ -14,6 +14,7 @@ const listStyle = createUseStyles({
       marginTop: '15px',
       '& a':{
         fontSize: '12px',
+        padding: '15px 163px 12px 162px',
         '& h4': {
           margin: '0'
         },
